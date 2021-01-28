@@ -1,9 +1,5 @@
 import _ from 'lodash'
-// import { NAME as NAME_OF_TARO } from './utilities'
-import Lion from './utilities'
-
-// console.log(utilities.Nijou(2));
-console.log(Lion.say())
+import './style.css'
 
 function component() {
   const element = document.createElement('div');
@@ -13,3 +9,4 @@ function component() {
 }
 
 document.body.appendChild(component())
+document.body.classList.add('haikei');
