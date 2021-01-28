@@ -25,6 +25,8 @@
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "live-server": "^1.2.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.18.0",
