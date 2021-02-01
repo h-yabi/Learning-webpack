@@ -2,6 +2,7 @@ const { loadavg } = require('os')
 const path = require('path')
 const HtmlWebbpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const outputPath = path.resolve(__dirname, 'dist')
 
@@ -36,6 +37,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: [
+              'minify',
               '@babel/preset-env',
               '@babel/preset-react',
             ]
@@ -59,5 +61,17 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css'
     })
-  ]
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true
+          },
+        }
+      })
+    ]
+  }
 }
